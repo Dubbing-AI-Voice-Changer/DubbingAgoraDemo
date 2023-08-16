@@ -1,16 +1,19 @@
-# 实时变声（声网插件版）
+# Dubbing AI Voice Changer
 ***
-### 准备工作
-* 获取你的声网appId、userId、声网token、房间id，填入MainActivity对应变量。
-* 运行demo，此时设备上会生成应用目录。
-* 通过Android Studio的DeviceFileExplorer，找到data/data/com.gerzz.demo/files目录，并在此目录下新建vc_model目录。
-* 获取你的license文件、音色文件、模型文件。将这些文件放入上一步创建的文件夹内。
-* 用另外一台设备进入房间内。
+### Android
 
-### 界面操作
-1. 点击进入房间，进入成功后，另外一台设备会听到你的声音。
-2. 点击开始变声，此时会初始化变声引擎，成功后就开始变声。注：此时只能听到原声。
-3. 点击设置音色，会出现音色列表。点击一个音色，设置音色成功后，另外一台设备就可以听到变化之后的声音。
-4. 点击停止变声，则听到原声。
-5. 点击禁用插件后，则听到原声。
-6. 禁用插件后，如需再次开启，则需先点击启用插件，然后再从第2步开始操作即可。
+Preparation
+* Download the required resources from this link: https://dvi.dubbing.tech/vc-plug/resources.zip
+* Obtain your Agora appId, userId, Agora token, and room id, and fill in the corresponding variables of MainActivity.
+* Run the demo, and an application directory will be generated on the device.
+* Through the DeviceFileExplorer of Android Studio, find the data/data/com.gerzz.demo/files directory, and create a new vc_model directory under this directory.
+* Get your license file, voice file, model file. Put these files into the folder created in the previous step.
+* Use another device to enter the room.
+
+Interface Operation
+1. Click to enter the room. After entering successfully, another device will hear your voice.
+2. Click `开始变声` to start changing the voice, and the voice changing engine will be initialized at this time, and the voice will start to change after success. Note: Only the original sound can be heard at this time.
+3. Click `设置音色` to set the voice, and the voice list will appear. Click on a voice, and after setting the voice successfully, another device can hear the sound after voice conversion.
+4. Click `停止变声`, you will hear the original voice.
+5. Click `禁用插件`, you will hear the original voice.
+6. After disabling the plug-in, if you need to enable it again, you need to click `启用插件` first, and then start from step 2.
