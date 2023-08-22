@@ -29,10 +29,10 @@ class MainActivity : AppCompatActivity(), OnClickListener {
     private val stopRealTimeTranscribe_ = "stopRealTimeTranscribe"
     private val getSpeakersInfo_ = "getSpeakersInfo"
 
-    val appId = Constant.appId//填写你的声网appId
-    val user = Constant.user//填写你的userId
-    val token = Constant.token//填写你的声网token
-    var room = Constant.room//填写你的房间id
+    val appId = Constant.appId//Fill in your Agora appId
+    val user = Constant.user//Fill in your userId
+    val token = Constant.token//Fill in your Agora token
+    var room = Constant.room//Fill in your room id
     private lateinit var dataBinding: ActivityMainBinding
     private lateinit var mRtcEngine: RtcEngine
     private var hasJoinRoom = false
@@ -188,7 +188,13 @@ class MainActivity : AppCompatActivity(), OnClickListener {
 
                     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
                         val obj = arr.getJSONObject(position)
-                        val string = "${obj.getInt("id")} ${obj.getString("name")}"
+                        val id = obj.getInt("id")
+                        val gender = when (id) {
+                            189 -> "Female voice"
+                            190 -> "Male voice"
+                            else -> ""
+                        }
+                        val string = "$id $gender"
                         val textView = holder.itemView.findViewById<TextView>(R.id.tvVoice)
                         textView.text = string
                         textView.setOnClickListener {
@@ -228,7 +234,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             if (grantResults.size == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 joinRoom()
             } else {
-                Toast.makeText(this, "需要录音权限", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Recording permission required", Toast.LENGTH_LONG).show()
             }
         }
         filesDir.path

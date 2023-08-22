@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="right"
-            android:text="房间ID："
+            android:text="Room ID: "
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvState" />
 
@@ -36,18 +36,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:gravity="center"
-            android:inputType="numberSigned"
             app:layout_constraintBaseline_toBaselineOf="@id/tvRoom"
             app:layout_constraintLeft_toRightOf="@id/tvRoom" />
 
         <TextView
             android:id="@+id/tvJoinRoom"
             style="@style/btn"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:onClick="onClick"
-            android:text="进入房间"
+            android:text="Enter room"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/tvLeaveRoom"
             app:layout_constraintTop_toBottomOf="@id/etRoom" />
@@ -55,11 +54,11 @@
         <TextView
             android:id="@+id/tvLeaveRoom"
             style="@style/btn"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:onClick="onClick"
-            android:text="离开房间"
+            android:text="Leave room"
             app:layout_constraintBaseline_toBaselineOf="@id/tvJoinRoom"
             app:layout_constraintLeft_toRightOf="@id/tvJoinRoom"
             app:layout_constraintRight_toRightOf="parent" />
@@ -67,11 +66,11 @@
         <TextView
             android:id="@+id/tvStartVC"
             style="@style/btn"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:onClick="onClick"
-            android:text="开始变声"
+            android:text="Start voice changing"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/tvStopVC"
             app:layout_constraintTop_toBottomOf="@id/tvLeaveRoom" />
@@ -79,11 +78,11 @@
         <TextView
             android:id="@+id/tvStopVC"
             style="@style/btn"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:onClick="onClick"
-            android:text="停止变声"
+            android:text="Stop voice changing"
             app:layout_constraintBaseline_toBaselineOf="@id/tvStartVC"
             app:layout_constraintLeft_toRightOf="@id/tvStartVC"
             app:layout_constraintRight_toRightOf="parent" />
@@ -91,22 +90,22 @@
         <TextView
             android:id="@+id/tvEnable"
             style="@style/btn"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:onClick="onClick"
-            android:text="启用插件"
+            android:text="Enable plugin"
             app:layout_constraintLeft_toLeftOf="@id/tvStartVC"
             app:layout_constraintTop_toBottomOf="@id/tvStopVC" />
 
         <TextView
             android:id="@+id/tvDisable"
             style="@style/btn"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:onClick="onClick"
-            android:text="禁用插件"
+            android:text="Disable plugin"
             app:layout_constraintBaseline_toBaselineOf="@id/tvEnable"
             app:layout_constraintLeft_toRightOf="@id/tvEnable"
             app:layout_constraintRight_toRightOf="parent" />
@@ -114,11 +113,11 @@
         <TextView
             android:id="@+id/tvSet"
             style="@style/btn"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:onClick="onClick"
-            android:text="设置音色"
+            android:text="Choose voice"
             app:layout_constraintLeft_toLeftOf="@id/tvStartVC"
             app:layout_constraintTop_toBottomOf="@id/tvEnable" />
 
@@ -127,7 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="点击音色进行设置"
+            android:text="Click on the voice to test"
             android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@id/tvSet" />
 
