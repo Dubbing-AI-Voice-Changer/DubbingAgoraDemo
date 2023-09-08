@@ -2,7 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,9 +18,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ea0-ds-0Gy">
-                                <rect key="frame" x="96.666666666666686" y="351" width="200" height="50"/>
+                                <rect key="frame" x="121.66666666666669" y="351" width="150" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="thS-Ol-kXp"/>
+                                    <constraint firstAttribute="width" constant="150" id="gCb-uY-hYT"/>
                                     <constraint firstAttribute="height" constant="50" id="xc7-A0-G6w"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -35,10 +36,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRQ-Qr-pNA">
-                                <rect key="frame" x="96.666666666666686" y="451" width="200" height="50"/>
+                                <rect key="frame" x="121.66666666666669" y="451" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GsN-b6-2Cs"/>
-                                    <constraint firstAttribute="width" constant="200" id="xMX-PR-hNR"/>
+                                    <constraint firstAttribute="width" constant="150" id="wph-nf-BPi"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="选择音色">
@@ -53,12 +54,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="tNh-Hy-llV">
-                                <rect key="frame" x="160.66666666666666" y="206" width="72" height="85"/>
+                                <rect key="frame" x="93.666666666666686" y="185" width="206" height="106"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="8YS-kU-sxM"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="AbE-Eo-JLu"/>
-                                    <constraint firstAttribute="height" constant="85" id="LMz-nd-iUq"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="85" id="O42-23-QP5"/>
+                                    <constraint firstAttribute="width" constant="206" id="8YS-kU-sxM"/>
+                                    <constraint firstAttribute="height" constant="106" id="LMz-nd-iUq"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -84,7 +83,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="72" height="85.666664123535156"/>
+        <image name="icon" width="216" height="106"/>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

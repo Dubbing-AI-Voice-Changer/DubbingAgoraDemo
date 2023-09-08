@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  DBDome
+//  DBDemo
 //
-//  Created by 杜改革 on 2023/4/20.
+//  Created by 杜改革 on 2023/5/12.
 //
 
 #import "ViewController.h"
@@ -10,9 +10,9 @@
 #import <DubbingRtvcFilter/EngineFilterManager.h>
 
 NSString * appId = @"3bc48e73d34d4617b3a48a3a2db3504e";
-NSString * token = @"0063bc48e73d34d4617b3a48a3a2db3504eIACVZdWppa8qVPDsg1TpJggn507rOolNmbexLLSAZO/dV6TPDnrhY8/4HAAm6/oEKUpDZAMAAQApSkNkAgApSkNkBAApSkNk";
-NSString * channelId = @"WB6Op";
-int uid = 201520;
+NSString * token = @"0063bc48e73d34d4617b3a48a3a2db3504eIADOLuwQy+0iYi3NZEOdDvYwkVMZwiJunbDRjFhz/0PBe3BH0fqFJJUQHADNBUAEyjHgZAMAAQDKMeBkAgDKMeBkBADKMeBk";
+NSString * channelId = @"8OEm2";
+int uid = 202580;
 
 @interface ViewController ()<AgoraMediaFilterEventDelegate, AgoraRtcEngineDelegate>
 @property (strong, nonatomic) AgoraRtcEngineKit *agoraKit;
@@ -22,13 +22,13 @@ int uid = 201520;
 @property (strong, nonatomic) NSString * currSpeakerId;
 @property (strong, nonatomic) NSString * currSpeakerName;
 @property (strong, nonatomic) NSArray * speakerArray;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
     AgoraRtcEngineConfig *cfg = [[AgoraRtcEngineConfig alloc] init];
     cfg.appId = appId;
     cfg.eventDelegate = self;
@@ -61,11 +61,11 @@ int uid = 201520;
 - (IBAction)engineClick:(id)sender {
     if (_isStarEngine) {
      [self.agoraKit setExtensionPropertyWithVendor:[EngineFilterManager vendorName] extension:@"RealTimeTranscribe" key:@"stopRealTimeTranscribe" value:@"stopRealTimeTranscribe"];
-        [self.enginebtn setTitle:@"开启声音引擎" forState:0];
-        [self.speakerbtn setTitle:@"选择音色" forState: 0];
+        [self.enginebtn setTitle:@"Start voice changing" forState:0];
+        [self.speakerbtn setTitle:@"Choose voice" forState: 0];
     } else {
         [self.agoraKit setExtensionPropertyWithVendor:[EngineFilterManager vendorName] extension:@"RealTimeTranscribe" key:@"startRealTimeTranscribe" value:@"startRealTimeTranscribe"];
-        [self.enginebtn setTitle:@"关闭声音引擎" forState:0];
+        [self.enginebtn setTitle:@"Stop voice changing" forState:0];
     }
     _isStarEngine = !_isStarEngine;
 }
@@ -74,16 +74,16 @@ int uid = 201520;
     if (_isStarEngine == false) {
         return;
     }
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"选择音色" message:@"开始选择符合你的音色吧" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Choose voice" message:@"Choose the voice you like" preferredStyle:UIAlertControllerStyleActionSheet];
     for (NSDictionary * dict in _speakerArray) {
-        UIAlertAction * action = [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@", dict[@"name"]] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction * action = [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@", dict[@"speakerModelId"]] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             self.currSpeakerId = [NSString stringWithFormat:@"%@", dict[@"speakerModelId"]];
-            self.currSpeakerName = [NSString stringWithFormat:@"%@", dict[@"name"]];
+            self.currSpeakerName = [NSString stringWithFormat:@"%@", dict[@"speakerModelId"]];
             [self changeClick];
         }];
         [alert addAction:action];
     }
-    UIAlertAction * action = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction * action = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
     }];
     [alert addAction:action];
     [self presentViewController:alert animated:YES completion:nil];
@@ -94,4 +94,6 @@ int uid = 201520;
     NSLog(@"setExtensionPropertyWithVendor -> %d", ret);
     [self.speakerbtn setTitle:_currSpeakerName forState: 0];
 }
+
+
 @end
