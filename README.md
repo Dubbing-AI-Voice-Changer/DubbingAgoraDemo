@@ -28,6 +28,6 @@ Preparation
 * Run the project on the real machine
 
 Interface Operation
-1. Start the app, you can see `开启声音引擎` and `选择音色` buttons
-2. Click `开启声音引擎` 
-3. Click `选择音色` to choose a voice
+1. Start the app, you can see `Start voice changing` and `Choose voice` buttons
+2. Click `Start voice changing` 
+3. Click `Choose voice` to choose a voice
